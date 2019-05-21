@@ -1,0 +1,19 @@
+
+{% extends 'index.html' %}
+{% block 'body' %}
+
+    <div class="row">
+        {% for a in animals %}
+         <div class="col-lg-4">
+              <div class="card" style="width: 18rem;">
+          <img src="{{a.image_url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{a.model}}</h5>
+            <p class="card-text">{{a.name}}</p>
+            <a href="" class="btn btn-primary">See details</a>
+          </div>
+        </div>
+         </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
