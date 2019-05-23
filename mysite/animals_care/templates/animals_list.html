@@ -2,6 +2,7 @@
 {% extends 'index.html' %}
 {% block 'body' %}
 
+    {% if animals %}
     <div class="row">
         {% for a in animals %}
          <div class="col-lg-4">
@@ -10,10 +11,14 @@
           <div class="card-body">
             <h5 class="card-title">{{a.model}}</h5>
             <p class="card-text">{{a.name}}</p>
-            <a href="" class="btn btn-primary">See details</a>
+            <a href="{% url 'animal_detail' a.id %}" class="btn btn-primary">See details</a>
           </div>
         </div>
          </div>
         {% endfor %}
     </div>
+
+    {% else %}
+    <h1>No animals. <a href="">Create one?</a> </h1>
+    {% endif %}
     {% endblock %}

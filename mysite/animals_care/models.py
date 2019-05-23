@@ -1,13 +1,14 @@
 from django.db import models
 
 
-from users.models import ProfileOwner
+from accounts.models import ProfileOwner
 # Create your models here.
 
 
 class Food(models.Model):
     name = models.CharField(max_length=200)
     price = models.PositiveIntegerField()
+
 
     def __str__(self):
         return f"{self.name}"
@@ -24,3 +25,29 @@ class Animal(models.Model):
 
     def __str__(self):
         return f"{self.user} has {self.name}"
+
+
+
+#class Toys(models.Model):
+ #   name = models.CharField(max_length=200)
+ #   type = models.CharField(max_length=200)
+  #  price = models.PositiveIntegerField()
+   # description = models.TextField()
+    #image_url = models.URLField()
+    #company
+
+    #def __str__(self):
+     #   return f"{self.name} has {self.price}"
+
+
+#class Other_Products(models.Model):
+ #   name = models.CharField(max_length=200)
+  #  type = models.CharField(max_length=200)
+   # price = models.PositiveIntegerField()
+    #description = models.TextField()
+    #image_url = models.URLField()
+    #company
+
+    #def __str__(self):
+     #   return f"{self.name} has {self.price}"
+
