@@ -14,7 +14,7 @@
             <h3>Age: {{animal.age}}</h3>
             <p>Description: {{animal.description}}</p>
 
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{% url 'animal_edit' animal.id %}" class="btn btn-success">Edit</a>
             <a href="{% url 'animal_delete' animal.id %}" class="btn btn-danger">Delete</a>
 
         </div>

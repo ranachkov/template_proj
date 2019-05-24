@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block 'body' %}
+
+    {% if products %}
+    <div class="row">
+        {% for a in products %}
+         <div class="col-lg-4">
+              <div class="card" style="width: 18rem;">
+          <img src="{{a.image_url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{a.name}}</h5>
+              <h5 class="card-title">{{a.price}}</h5>
+            <a href="" class="btn btn-primary">Buy</a>
+          </div>
+        </div>
+         </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <h1>No products.  </h1>
+    {% endif %}
+    {% endblock %}
