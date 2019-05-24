@@ -5,8 +5,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Products
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'products' %}">Products</a>
+          <a class="dropdown-item" href="{% url 'food_list' %}">Food</a>
+        </div>
+      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'animals' %}">Animals <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'companies_list' %}">Companies <span class="sr-only">(current)</span></a>
       </li>
 
 
@@ -27,13 +36,26 @@
           <a class="dropdown-item" href="{% url 'my_animals' %}">My Animals</a>
         </div>
       </li>
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About us
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="">Services</a>
+          <a class="dropdown-item" href="">About us</a>
+          <a class="dropdown-item" href="">Contacts</a>
+        </div>
+      </li>
+
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{user}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-            <a class="dropdown-item" href="">Add food</a>
+            <a class="dropdown-item" href="{% url 'food_add' %}">Add food</a>
+            <a class="dropdown-item" href="{% url 'company_add' %}">Add company</a>
+
 
           <a class="dropdown-item" href="{% url 'user-profile' user.id %}">Profile</a>
           <a class="dropdown-item" href="{% url 'logout' %}?next=/accounts/login/">Logout</a>

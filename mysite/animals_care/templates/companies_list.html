@@ -1,0 +1,23 @@
+
+{% extends 'index.html' %}
+{% block 'body' %}
+
+    {% if companies %}
+    <div class="row">
+        {% for a in companies %}
+         <div class="col-lg-4">
+              <div class="card" style="width: 18rem;">
+          <img src="{{a.image_url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{a.name}}</h5>
+            <a href="" class="btn btn-primary">See details</a>
+          </div>
+        </div>
+         </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <h1>No companies. <a href="">Create one?</a> </h1>
+    {% endif %}
+    {% endblock %}

@@ -1,9 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 from django.views import generic
 from django.contrib.auth.models import User
 from .forms import EditProfileForm
+from django.contrib.auth.mixins import LoginRequiredMixin, AccessMixin
 
 
 from .models import ProfileOwner
@@ -15,7 +16,7 @@ def redirect_user(request):
     return HttpResponseRedirect(url)
 
 
-class UserDetail(generic.DetailView):
+class UserDetail(LoginRequiredMixin,generic.DetailView):
     model = ProfileOwner
     template_name = 'user_profile.html'
     context_object_name = 'user'
@@ -32,12 +33,16 @@ class SignIn(generic.CreateView):
     template_name = 'signin.html'
 
 
-class UserEdit(generic.UpdateView):
+class UserEdit(LoginRequiredMixin,generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'user_edit.html'
-    success_url = 'profile/(?P<pk>\d+)/'
+    success_url = '/animals/'
+    model = ProfileOwner
 
     def form_valid(self, form):
-        user = ProfileOwner.objects.all().filter(user__pk=self.request.user.id)[0]
-        form.instance.user = user
         return super().form_valid(form)
+
+    def get(self, request, pk):
+        instance = ProfileOwner.objects.get(pk=pk)
+        form = EditProfileForm(request.POST or None, instance=instance)
+        return render(request, 'user_edit.html', {'form': form})
