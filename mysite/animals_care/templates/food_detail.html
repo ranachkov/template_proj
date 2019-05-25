@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+     <div class="row">
+            <div class="col-lg-6">
+            <img src="{{food.image_url}}" style="width: 100%" alt="">
+        </div>
+        <div class="col-lg-6">
+            <h3>Name: {{food.name}}</h3>
+            <h3>Price: {{food.price}}</h3>
+
+            <h3>Description: {{food.description}}</h3>
+            <h3>Company: {{food.company}}</h3>
+
+            <a href="{% url 'food_edit' food.id %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'food_delete' food.id %}" class="btn btn-danger">Delete</a>
+
+        </div>
+    </div>
+
+{% endblock %}

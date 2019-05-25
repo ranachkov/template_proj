@@ -14,4 +14,12 @@ urlpatterns = [
     path('company_add/', views.CreateCompany.as_view(), name='company_add'),
     path('companies_list/', views.CompanyList.as_view(), name='companies_list'),
     path('', views.Other_ProductsList.as_view(), name='products'),
+    re_path('food_list/delete/(?P<pk>\d+)/', views.FoodDelete.as_view(), name='food_delete'),
+    re_path('food_list/edit/(?P<pk>\d+)/', views.FoodEdit.as_view(), name='food_edit'),
+    re_path('companies_list/delete/(?P<pk>\d+)/', views.CompanyDelete.as_view(), name='company_delete'),
+    re_path('companies_list/edit/(?P<pk>\d+)/', views.CompanyEdit.as_view(), name='company_edit'),
+    re_path('food_list/details/(?P<pk>\d+)/', views.FoodDetail.as_view(), name='food_detail'),
+    re_path('companies_list/details/(?P<pk>\d+)/', views.CompanyDetail.as_view(), name='company_detail')
 ]
+
+

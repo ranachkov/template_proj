@@ -11,7 +11,8 @@
           <div class="card-body">
             <h5 class="card-title">{{a.price}}</h5>
             <p class="card-text">{{a.name}}</p>
-            <a href="" class="btn btn-primary">See details</a>
+              <p class="card-text">{{a.company}}</p>
+            <a href="{% url 'food_detail' a.id  %}" class="btn btn-primary">See details</a>
           </div>
         </div>
          </div>
@@ -19,6 +20,6 @@
     </div>
 
     {% else %}
-    <h1>No foods. <a href="">Create one?</a> </h1>
+    <h1>No foods. <a href="{% url 'food_add' %}">Create one?</a> </h1>
     {% endif %}
     {% endblock %}

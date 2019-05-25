@@ -6,6 +6,7 @@ from accounts.models import ProfileOwner
 
 class Company(models.Model):
     name = models.CharField(max_length=200)
+    user = models.ForeignKey(ProfileOwner, on_delete=models.CASCADE)
 
 
     def __str__(self):
@@ -18,6 +19,7 @@ class Food(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, default=None)
     image_url = models.URLField(blank=True)
     description = models.TextField(blank=True)
+    user = models.ForeignKey(ProfileOwner, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name}"

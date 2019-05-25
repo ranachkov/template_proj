@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+     <div class="row">
+            <div class="col-lg-6">
+            <img src="" style="width: 100%" alt="">
+        </div>
+        <div class="col-lg-6">
+            <h3>Name: {{company.name}}</h3>
+
+
+            <a href="{% url 'company_edit' company.id %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'company_delete' company.id %}" class="btn btn-danger">Delete</a>
+
+        </div>
+    </div>
+
+{% endblock %}
