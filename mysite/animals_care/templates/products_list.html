@@ -1,6 +1,11 @@
 {% extends 'index.html' %}
 {% block 'body' %}
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
+<div class="w3-quarter">
+<h2>Our Products</h2>
+<p> Our products are the best on the market</p>
+</div>
     {% if products %}
     <div class="row">
         {% for a in products %}
@@ -8,14 +13,15 @@
               <div class="card" style="width: 18rem;">
           <img src="{{a.image_url}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{a.name}}</h5>
-              <h5 class="card-title">{{a.price}}</h5>
+            <h5 class="card-title">Name: {{a.name}}</h5>
+              <h5 class="card-title">Price: {{a.price}} BGN</h5>
             <a href="" class="btn btn-primary">Buy</a>
           </div>
         </div>
          </div>
         {% endfor %}
     </div>
+</div>
 
     {% else %}
     <h1>No products.  </h1>

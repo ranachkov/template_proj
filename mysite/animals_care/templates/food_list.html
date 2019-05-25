@@ -1,7 +1,12 @@
 
 {% extends 'index.html' %}
 {% block 'body' %}
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
+<div class="w3-quarter">
+<h2>Our Food</h2>
+<p> Our Food is the best on the market</p>
+</div>
     {% if foods %}
     <div class="row">
         {% for a in foods %}
@@ -18,6 +23,7 @@
          </div>
         {% endfor %}
     </div>
+</div>
 
     {% else %}
     <h1>No foods. <a href="{% url 'food_add' %}">Create one?</a> </h1>

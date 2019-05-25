@@ -1,7 +1,12 @@
 
 {% extends 'index.html' %}
 {% block 'body' %}
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
+<div class="w3-quarter">
+<h2>Best Friends</h2>
+
+</div>
     {% if animals %}
     <div class="row">
         {% for a in animals %}
@@ -17,6 +22,7 @@
          </div>
         {% endfor %}
     </div>
+</div>
 
     {% else %}
     <h1>No animals. <a href="{% url 'animals_create' %}">Create one?</a> </h1>

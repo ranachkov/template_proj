@@ -20,6 +20,7 @@ class FoodForm(forms.ModelForm):
             'class': 'form-contol'
         }
     ))
+
     price = forms.IntegerField(required=True,
                             widget=forms.TextInput(
         attrs={

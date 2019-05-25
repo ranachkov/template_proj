@@ -1,11 +1,17 @@
 {% extends 'index.html' %}
 
 {% block 'body' %}
-        <form method="post">
-            {% csrf_token %}
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+         <form method="post" class="food-form">
+             {% csrf_token %}
             {{form}}
-            <button class="btn btn-primary" type="submit"> Add</button>
-        </form>
+            <button class="btn btn-primary" type="submit">Add</button>
+         </form>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
 
 
 {% endblock %}

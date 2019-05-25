@@ -1,7 +1,14 @@
+
 .card {
     background-color: black;
-    color: white;
+    color: #28a745;
     margin: 5% 0%;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 2 auto;
+    padding: 1.25rem;
+    background: azure;
 }
 
 .btn-primary:hover {
@@ -21,3 +28,18 @@
     padding: 5% 6%;
     margin: 5% 0%;
 }
+
+.food-form {
+    border: 1px solid grey;
+    padding: 5% 6%;
+    margin: 5% 0%;
+}
+
+
+.user-edit {
+    border: 1px solid grey;
+    padding: 5% 6%;
+    margin: 5% 0%;
+}
+
+

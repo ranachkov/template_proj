@@ -1,13 +1,16 @@
 
 {% extends 'index.html' %}
 {% block 'body' %}
-
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>Our Partners</h2>
+    <p>The best in the business</p><br>
     {% if companies %}
+
     <div class="row">
         {% for a in companies %}
          <div class="col-lg-4">
-              <div class="card" style="width: 18rem;">
-          <img src="{{a.image_url}}" class="card-img-top" alt="...">
+              <div class="card" style="width: 25rem;">
+
           <div class="card-body">
             <h5 class="card-title">{{a.name}}</h5>
             <a href="{% url 'company_detail' a.id %}" class="btn btn-primary">See details</a>
@@ -16,6 +19,8 @@
          </div>
         {% endfor %}
     </div>
+</div>
+
 
     {% else %}
     <h1>No companies. <a href="{% url 'company_add' %}">Create one?</a> </h1>
